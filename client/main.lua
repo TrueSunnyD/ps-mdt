@@ -608,10 +608,22 @@ RegisterNUICallback("getPenalCode", function(data, cb)
     cb(true)
 end)
 
+--RegisterNUICallback("toggleDuty", function(data, cb)
+--    TriggerServerEvent('QBCore:ToggleDuty')
+--    cb(true)
+--end)
+--ORIGINAL IS ABOVE
+--BELOW IS FIX FOR TOGGLE DUTY
 RegisterNUICallback("toggleDuty", function(data, cb)
-    TriggerServerEvent('QBCore:ToggleDuty')
+    local JobType = GetJobType(PlayerData.job.name)
+    if JobType == "police" then
+    TriggerEvent('qb-policejob:ToggleDuty')
+    elseif JobType == "ambulance" then
+        TriggerEvent('EMSToggle:Duty')
+    end
     cb(true)
 end)
+--end
 
 RegisterNUICallback("setCallsign", function(data, cb)
     TriggerServerEvent('mdt:server:setCallsign', data.cid, data.newcallsign)
