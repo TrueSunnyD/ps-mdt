@@ -241,18 +241,18 @@ Config.PenalCode = {
 
 Config.PoliceJobs = {
     ['police'] = true,
-    ['lspd'] = true,
-    ['bcso'] = true,
-    ['sast'] = true,
-    ['sasp'] = true,
-    ['doc'] = true,
-    ['sapr'] = true,
-    ['pa'] = true -- yucky
+    ['lspd'] = false,
+    ['bcso'] = false,
+    ['sast'] = false,
+    ['sasp'] = false,
+    ['doc'] = false,
+    ['sapr'] = false,
+    ['pa'] = false -- yucky
 }
 
 Config.AmbulanceJobs = {
     ['ambulance'] = true,
-    ['doctor'] = true
+    ['doctor'] = false
 }
 
 Config.DojJobs = {
